@@ -125,10 +125,16 @@ Page({
     this.getCode();
     wx.showLoading({ title: '提交中...' })
 
-    var doPay = function (orderId) {
+    var orderIds = [];
+    var doPay = function () {
       wx.hideLoading()
-      wx.navigateTo({
-        url: '../paySuccess/paySuccess?orderId=' + orderId
+      var paidOrders = wx.getStorageSync('paidOrders') || {};
+      for (var i = 0; i < orderIds.length; i++) {
+        paidOrders[orderIds[i]] = true;
+      }
+      wx.setStorageSync('paidOrders', paidOrders);
+      wx.redirectTo({
+        url: '../paySuccess/paySuccess?orderId=' + orderIds[orderIds.length - 1]
       })
     }
 
@@ -149,8 +155,9 @@ Page({
           var code = res.data.code;
           var orderId = res.data.data;
           if (code == '0000') {
+            orderIds.push(orderId);
             if (index == goodsList.length - 1) {
-              doPay(orderId);
+              doPay();
             } else {
               submitNext(index + 1);
             }

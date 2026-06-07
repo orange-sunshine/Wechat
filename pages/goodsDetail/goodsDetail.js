@@ -15,9 +15,11 @@ Page({
 	},
 
 	onLoad: function (e) {
-		//从参数 e 里面获取上一个页面携带过来的参数
 		var goodsId = e.goodsId;
 		this.loadGoodsDetail(goodsId)
+		this.loadCart();
+	},
+	onShow: function () {
 		this.loadCart();
 	},
 
@@ -84,9 +86,10 @@ Page({
 		}
 	},
 
-	intocart: function (e) { //加入购物车
+	intocart: function (e) {
 		var that = this;
 		var goodsId = e.currentTarget.id;
+		var num = this.data.num;
 		var userId = wx.getStorageSync("userId");
 		if (userId != "") {
 			wx.showLoading({ title: '加入中...' })
@@ -96,6 +99,7 @@ Page({
 				data: {
 					'userId': userId,
 					'goodsId': goodsId,
+					'num': num,
 					'type': '0'
 				},
 				header: {
@@ -103,14 +107,18 @@ Page({
 				},
 				success: function (res) {
 					wx.hideLoading()
-					var code = res.data.code;
+					console.log('intocart res', res)
+					var code = res.data && res.data.code;
 					if (code == '0000') {
 						wx.showToast({ title: '已加入购物车', icon: 'success' })
 						that.loadCart();
+					} else {
+						wx.showToast({ title: res.data && res.data.data || '加入失败', icon: 'none' })
 					}
 				},
-				fail: function () {
+				fail: function (err) {
 					wx.hideLoading()
+					console.log('intocart fail', err)
 					wx.showToast({ title: '网络异常', icon: 'none' })
 				}
 			})
@@ -126,7 +134,7 @@ Page({
 			url: '../shoppingcart/shoppingcart'
 		})
 	},
-	loadCart: function () { //获取购物车列表
+	loadCart: function () {
 		var that = this;
 		var userId = wx.getStorageSync("userId");
 		if (userId != "") {
@@ -141,12 +149,18 @@ Page({
 					'Content-Type': 'application/json'
 				},
 				success: function (res) {
-					console.log(res);
 					var code = res.data.code;
 					if (code == '0000') {
-						var ret = res.data.data;
+						var ret = res.data.data || [];
+						var doneIds = wx.getStorageSync('checkoutCartIds') || [];
+						var count = 0;
+						for (var i = 0; i < ret.length; i++) {
+							if (doneIds.indexOf(ret[i].id) === -1) {
+								count++;
+							}
+						}
 						that.setData({
-							cartNum: ret.length
+							cartNum: count
 						});
 					}
 				},

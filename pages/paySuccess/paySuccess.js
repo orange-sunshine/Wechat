@@ -10,7 +10,7 @@ Page({
 	},
 	orderDetail: function () {
 		wx.redirectTo({
-			url: '../orderDetail/orderDetail?orderId=' + this.data.orderId
+			url: '../myOrder/myOrder?id=0&status=1'
 		})
 	}
 })

@@ -9,6 +9,9 @@ Page({
   onLoad: function () {
     this.loadCarts();
   },
+  onShow: function () {
+    this.loadCarts();
+  },
 
   loadCarts: function () {
     var that = this;
@@ -24,12 +27,17 @@ Page({
         header: { 'Content-Type': 'application/json' },
         success: function (res) {
           wx.hideLoading()
-          var carts = res.data.data;
+          var doneIds = wx.getStorageSync('checkoutCartIds') || [];
+          var carts = res.data.data || [];
+          var filtered = [];
           for (var i = 0; i < carts.length; i++) {
-            carts[i].selected = false;
+            if (doneIds.indexOf(carts[i].id) === -1) {
+              carts[i].selected = false;
+              filtered.push(carts[i]);
+            }
           }
           that.setData({
-            carts: carts,
+            carts: filtered,
             totalPrice: 0,
             selectAll: false
           });
@@ -128,6 +136,7 @@ Page({
     for (var i = 0; i < carts.length; i++) {
       if (carts[i].selected) {
         selected.push({
+          cartId: carts[i].id,
           goodsId: carts[i].goodsId,
           num: carts[i].num,
           goodsName: carts[i].goodsName,
@@ -144,6 +153,11 @@ Page({
       })
       return;
     }
+    var cartIds = [];
+    for (var i = 0; i < selected.length; i++) {
+      cartIds.push(selected[i].cartId);
+    }
+    wx.setStorageSync('checkoutCartIds', cartIds);
     if (selected.length == 1) {
       wx.navigateTo({
         url: '../buy/buy?goodsId=' + selected[0].goodsId + '&num=' + selected[0].num

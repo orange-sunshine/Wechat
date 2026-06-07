@@ -90,10 +90,16 @@ Page({
 			},
 			success: function (res) {
 				wx.hideLoading()
-				var orders = res.data.data;
-				console.log(orders);
+				var paidOrders = wx.getStorageSync('paidOrders') || {};
+				var orders = res.data.data || [];
+				var filtered = [];
+				for (var i = 0; i < orders.length; i++) {
+					if (!paidOrders[orders[i].id]) {
+						filtered.push(orders[i]);
+					}
+				}
 				that.setData({
-					orders: orders
+					orders: filtered
 				});
 			},
 			fail: function () {
