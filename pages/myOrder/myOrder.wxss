@@ -1,0 +1,164 @@
+.content {
+	font-family: "Microsoft YaHei";
+	width: 100%;
+}
+
+.type {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	background: #f2f2f2;
+}
+
+.type view {
+	margin: 0 auto;
+}
+
+.select {
+	font-size: 16px;
+	font-weight: bold;
+	width: 25%;
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 5rpx solid #009966;
+	color: #009966;
+}
+
+.default {
+	width: 25%;
+	font-size: 16px;
+	text-align: center;
+	height: 45px;
+	line-height: 45px;
+}
+
+.hr {
+	height: 12px;
+	background-color: #dddddd;
+}
+
+.items {
+	padding-top: 40px;
+}
+
+.title {
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.line {
+	height: 1px;
+	width: 100%;
+	background-color: #cccccc;
+	opacity: 0.2;
+}
+
+.line10 {
+	height: 1px;
+	width: 100%;
+	background-color:
+		#cccccc;
+	opacity: 0.2;
+	margin-bottom: 10px;
+}
+
+.good {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+.pic {
+	width: 25%;
+	text-align: center;
+	line-height: 100px;
+}
+
+.good image {
+	width: 50px;
+	height: 70px;
+	vertical-align: middle;
+}
+
+.goodInfo {
+	width: 75%;
+	line-height: 50px;
+}
+
+.name {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.price {
+	color: red;
+	text-align: right;
+	margin-right: 20px;
+}
+
+.count {
+	margin-right: 10px;
+	font-size: 12px;
+	color: #666666;
+}
+
+.tip {
+	display: flex;
+	flex-direction: row;
+	height: 70px;
+}
+
+.term {
+	width: 30%;
+	font-size: 13px;
+	line-height: 70px;
+	margin-left: 10px;
+}
+
+.desc2 {
+	width: 60%;
+	font-size: 12px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.btn {
+	padding: 10px;
+	text-align: right;
+}
+
+.btn text {
+	border: 1px solid #009966;
+	padding: 3px;
+	font-size: 11px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.gyg {
+	margin-top: 200px;
+	text-align: center;
+}
+
+.gyg image {
+	width: 60px;
+	height: 60px;
+}
+
+.gygbtn {
+	border: 1px solid #009966;
+	color: #009966;
+	text-align: center;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	margin: 0 auto;
+	font-size: 16px;
+	border-radius: 5px;
+}

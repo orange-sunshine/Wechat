@@ -1,0 +1,22 @@
+.content {
+	background-color: #F9F9F8;
+	height: 600px;
+	font-family: "Microsoft YaHei";
+}
+
+.opinion {
+	margin: 10px;
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.holder {
+	font-size: 13px;
+	color: #999999;
+}
+
+.btn {
+	background-color: #009966;
+	margin: 10px;
+	color: #ffffff;
+}

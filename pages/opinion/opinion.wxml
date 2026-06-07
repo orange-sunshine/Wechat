@@ -1,0 +1,9 @@
+<view class="content">
+	<form bindsubmit="formSubmit" bindreset="formReset">
+		<view class="opinion">
+			<textarea placeholder="请填写您的意见或建议" placeholder-class='holder' name="content">
+			</textarea>
+		</view>
+		<button class="btn" form-type="submit">提交</button>
+	</form>
+</view>

@@ -1,0 +1,40 @@
+<view class="content">
+  <view class="hr"></view>
+  <view class="items">
+    <block wx:for="{{carts}}" wx:key="id">
+      <view class="item">
+        <view class="icon-wrap" data-id="{{item.id}}" bindtap="toggleCheck">
+          <view class="icon {{item.selected ? 'checked' : ''}}"></view>
+        </view>
+        <view class="pic">
+          <image src="{{item.listPic}}" style="width:70px;height:87px;"></image>
+        </view>
+        <view class="order">
+          <view class="title">{{item.goodsName}}</view>
+          <view class="priceInfo">
+            <view class="price">￥{{item.goodsPrice}}</view>
+            <view class="minus" id="{{item.id}}" bindtap="minusGoods">-</view>
+            <view class="count">{{item.num}}</view>
+            <view class="add" id="{{item.id}}" bindtap="addGoods">+</view>
+          </view>
+        </view>
+      </view>
+      <view class="line"></view>
+    </block>
+    <view wx:if="{{carts.length == 0}}" class="empty-cart">
+      <image src="/pages/images/icon/cart.png" style="width:60px;height:60px;"></image>
+      <text>购物车是空的</text>
+    </view>
+  </view>
+
+  <view class="bottom" wx:if="{{carts.length > 0}}">
+    <view class="all">
+      <view class="selectWrap" bindtap="toggleAll">
+        <view class="icon {{selectAll ? 'checked' : ''}}"></view>
+        <text class="allText">全选</text>
+      </view>
+      <view class="total">￥{{totalPrice}}</view>
+      <view class="opr" bindtap="buy">去结算</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,147 @@
+<view class="content">
+	<view class="haibao">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight">
+			<block wx:for="{{goodsDetail.roundPlayPicList}}">
+				<swiper-item>
+					<image src="{{item}}" class="silde-image" mode="aspectFill"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="title"><text class="tip">莫凡自营
+		</text>{{goodsDetail.goodsName}}</view>
+	<view class="desc">{{goodsDetail.briefIntroduction}}</view>
+	<view class="price"><text class="symbol">￥</text><text class="account">{{goodsDetail.goodsPrice}}</text> <text>定价：</text><text class="oldPrice">￥{{goodsDetail.goodsCost}}</text></view>
+	<view class="hr"></view>
+	<view class="items">
+		<view class="item">
+			<view class="term">作者</view>
+			<view>{{goodsDetail.author}}</view>
+		</view>
+		<view class="line"></view>
+		<view class="item">
+			<view class="term">出版</view>
+			<view>人民邮电出版社，{{goodsDetail.publishTime}}</view>
+		</view>
+	</view>
+	<view class="hr"></view>
+	<view class="mark">
+		<view>
+			<image src="/pages/images/icon/support.png" style="width:15px;height:15px;"></image>
+			<text class="searchContent">正品保障</text>
+		</view>
+		<view>
+			<image src="/pages/images/icon/support.png" style="width:15px;height:15px;"></image>
+			<text class="searchContent">支持礼品卡</text>
+		</view>
+		<view>
+			<image src="/pages/images/icon/support.png" style="width:15px;height:15px;"></image>
+			<text class="searchContent">支持 7 日无理由退货</text>
+		</view>
+		<view>
+			<image src="/pages/images/icon/support.png" style="width:15px;height:15px;"></image>
+			<text class="searchContent">礼品包装</text>
+		</view>
+	</view>
+	<view class="line"></view>
+	<view class="items">
+		<view class="item">
+			<view class="term">莫凡配送</view>
+			<view class="nav">运费 8 元，满 66 元包邮</view>
+		</view>
+	</view>
+	<view class="hr"></view>
+	<view class="items">
+		<view class="item">
+			<view class="term">数量</view>
+			<view class="priceInfo">
+				<view class="minus" id="{{goodsDetail.id}}" bindtap="minusGoods">-</view>
+				<view class="count">{{num}}</view>
+				<view class="add" id="{{goodsDetail.id}}" bindtap="addGoods">+</view>
+			</view>
+		</view>
+	</view>
+	<view class="hr"></view>
+	<view class="tab">
+		<view class="{{currentTab==0?'select':'normal'}}" id="0" bindtap="switchNav">
+			图书详情</view>
+		<view class="{{currentTab==1?'select':'normal'}}" id="1" bindtap="switchNav">
+			出版信息</view>
+	</view>
+	<view>
+		<swiper current="{{currentTab}}" style="height:2000px;">
+			<swiper-item>
+				<view class="detail">
+					<block wx:for="{{goodsDetail.infoPicList}}">
+						<image src="{{item}}" mode="widthFix"></image>
+					</block>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="items">
+					<view class="item">
+						<view class="term">书名</view>
+						<view>{{goodsDetail.bookName}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">ISBN</view>
+						<view>{{goodsDetail.isbn}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">作者</view>
+						<view>{{goodsDetail.author}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">出版社</view>
+						<view>{{goodsDetail.bookConcern}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">出版时间</view>
+						<view>{{goodsDetail.publishTime}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">版次</view>
+						<view>{{goodsDetail.edition}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">开本</view>
+						<view>{{goodsDetail.paperSize}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">纸张</view>
+						<view>{{goodsDetail.paper}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">包装</view>
+						<view>{{goodsDetail.packing}}</view>
+					</view>
+					<view class="line"></view>
+					<view class="item">
+						<view class="term">是否套装</view>
+						<view wx:if="{{goodsDetail.isSuit==0}}">是</view>
+						<view wx:else>否</view>
+					</view>
+					<view class="line"></view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+	<view class="hr"></view>
+	<view class="bottom">
+		<view class="cart" bindtap='seeCart'>
+			<image src="/pages/images/icon/cart.png"></image>
+			<text class="label" wx:if="{{cartNum > 0}}">{{cartNum}}</text>
+		</view>
+		<view class="intocart" bindtap='intocart' id="{{goodsDetail.id}}">加入购物车
+		</view>
+		<view class="buy" bindtap="buy" id="{{goodsDetail.id}}">立即购买</view>
+	</view>
+</view>

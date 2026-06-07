@@ -1,0 +1,84 @@
+.content {
+	font-family: "Microsoft YaHei";
+	height: 700px;
+	background-color: #F9F9F8;
+}
+
+.hr {
+	height: 20px;
+}
+
+.item {
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: row;
+	height: 75px;
+	padding: 10px;
+}
+
+.info {
+	width: 80%;
+	line-height: 35px;
+}
+
+.name {
+	margin-left: 20px;
+	font-size: 15px;
+	color: #999999;
+}
+
+.name text {
+	margin-right: 10px;
+}
+
+.address {
+	margin-left: 20px;
+	font-size: 13px;
+	color: #999999;
+	line-height: 20px;
+}
+
+.address text {
+	margin-right: 10px;
+}
+
+.opr {
+	border-left: 1px solid #f2f2f2;
+	line-height: 85px;
+	width: 20%;
+	text-align: center;
+}
+
+.line {
+	height: 1px;
+	width: 100%;
+	background-color: #cccccc;
+	opacity: 0.2;
+}
+
+.select {
+	border-left: 5px solid #009966;
+}
+
+.bg {
+	background-color: #ffffff;
+	height: 55px;
+	border: 1px solid #f2f2f2;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+
+.newAddress {
+	border: 1px solid #f2f2f2;
+	width: 220px;
+	height: 35px;
+	background-color: #009966;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #ffffff;
+}

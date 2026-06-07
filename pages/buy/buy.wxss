@@ -1,0 +1,176 @@
+.content {
+	width: 100%;
+	font-family: "Microsoft YaHei";
+	background-color: #F9F9F8;
+	height: 700px;
+}
+
+.hr {
+	height: 10px;
+}
+
+.address {
+	display: flex;
+	flex-direction: row;
+	height: 100px;
+	background-color: #ffffff;
+	line-height: 100px;
+}
+
+.location {
+	line-height: 100px;
+	margin-left: 10px;
+}
+
+.location image {
+	width: 20px;
+	height: 20px;
+}
+
+.desc {
+	line-height: 100px;
+	padding-left: 5px;
+	font-size: 15px;
+	color: #ff0000;
+}
+
+.nav {
+	position: absolute;
+	right: 10px;
+	line-height: 80px;
+}
+
+.desc1 {
+	padding: 5px;
+	font-size: 13px;
+	line-height: 20px;
+	align-items: center;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.addAddress {
+	font-size: 13px;
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	margin-left: 10px;
+	color: #666666;
+}
+
+.goods {
+	background-color: #ffffff;
+	height: 215px;
+}
+
+.title {
+	padding: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.line {
+	height: 1px;
+	width: 100%;
+	background-color: #cccccc;
+	opacity: 0.2;
+}
+
+.good {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+.pic {
+	width: 25%;
+	text-align: center;
+	line-height: 100px;
+}
+
+.good image {
+	width: 50px;
+	height: 70px;
+	vertical-align: middle;
+}
+
+.goodInfo {
+	width: 75%;
+	line-height: 50px;
+}
+
+.name {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.price {
+	color: red;
+}
+
+.count {
+	margin-left: 5px;
+	font-size: 12px;
+	color: #999999;
+}
+
+.tip {
+	display: flex;
+	flex-direction: row;
+	height: 70px;
+}
+
+.term {
+	width: 30%;
+	font-size: 13px;
+	line-height: 70px;
+	margin-left: 10px;
+}
+
+.desc2 {
+	width: 60%;
+	font-size: 12px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.bottom {
+	background-color: #ffffff;
+	height: 50px;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.cart {
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	line-height: 80px;
+}
+
+.intocart {
+	width: 70%;
+	background-color: #ffffff;
+	font-size: 12px;
+	text-align: right;
+	line-height: 50px;
+	padding-right: 10px;
+}
+
+.buy {
+	width: 30%;
+	background-color: #009966;
+	color: #ffffff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.total {
+	color: red;
+	font-size: 16px;
+	font-weight: bold;
+}

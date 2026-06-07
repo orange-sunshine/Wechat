@@ -1,0 +1,26 @@
+<view class="content">
+	<view class="hr"></view>
+	<block wx:for="{{addresses}}">
+		<view class="item">
+			<view class="info {{flag==index?'select':'normal'}}" id="{{index}}" data-id="{{item.id}}" bindtap="switchNav">
+				<view class="name">
+					<text>{{item.personName}}</text>
+					<text>{{item.contactNumber}}</text>
+				</view>
+				<view class="address">
+					<text>{{item.city}}</text>
+					<text>{{item.address}}</text>
+					<text>{{item.houseNumber}}</text>
+				</view>
+			</view>
+			<view class="opr" bindtap='editAddress' id="{{item.id}}">
+				<image src="/pages/images/icon/xg.png" style="width:33px;height:33px;">
+				</image>
+			</view>
+		</view>
+		<view class="line"></view>
+	</block>
+	<view class="bg">
+		<view class="newAddress" bindtap="newAddress">+新增地址</view>
+	</view>
+</view>

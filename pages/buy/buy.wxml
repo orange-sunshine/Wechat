@@ -1,0 +1,56 @@
+<view class="content">
+  <view class="hr"></view>
+  <view class="address" bindtap="selectAddress">
+    <view class="location">
+      <image src="/pages/images/icon/address.png"></image>
+    </view>
+    <block wx:if="{{addresses != ''}}">
+      <view class="desc1">
+        <view>收货人:{{addresses.personName}}</view>
+        <view>联系方式:{{addresses.contactNumber}}</view>
+        <view>收货地址:{{addresses.city}} {{addresses.address}} {{addresses.houseNumber}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="addAddress">
+        请选择收货地址
+      </view>
+    </block>
+    <view class="nav">></view>
+  </view>
+  <view class="hr"></view>
+  <view class="goods">
+    <view class="title">莫凡商城</view>
+    <view class="line"></view>
+    <block wx:for="{{goodsList}}" wx:for-item="goods" wx:key="goodsId">
+      <view class="good">
+        <view class="pic">
+          <image src="{{goods.listPic || '/pages/images/icon/default.png'}}"></image>
+        </view>
+        <view class="goodInfo">
+          <view class="name">{{goods.goodsName || '商品'}}</view>
+          <view class="price">￥{{goods.goodsPrice}}
+            <text class="count">x{{goods.num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="line"></view>
+    </block>
+    <view class="tip">
+      <view class="term">
+        送货说明
+      </view>
+      <view class="desc2">
+        <view>莫凡快递</view>
+        <view>今日22:00前付款</view>
+        <view>预计明天送达</view>
+      </view>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="hr"></view>
+  <view class="bottom">
+    <view class="intocart"><text>总额(含运费):<text class="total">￥{{totalPrice}}</text></text></view>
+    <view class="buy" bindtap="buy">提交订单</view>
+  </view>
+</view>

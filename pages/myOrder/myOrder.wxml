@@ -1,0 +1,124 @@
+<view class="content">
+	<view class="type">
+		<view class="{{currentTab==0?'select':'default'}}" data-current="0" data-status="1" bindtap="switchNav">待付款</view>
+		<view class="{{currentTab==1?'select':'default'}}" data-current="1" data-status="3" bindtap="switchNav">待收货</view>
+		<view class="{{currentTab==2?'select':'default'}}" data-current="2" data-status="4" bindtap="switchNav">已完成</view>
+	</view>
+	<view class="items">
+		<view class="hr"></view>
+		<swiper current="{{currentTab}}" style="height:1000px;">
+			<swiper-item>
+				<block wx:for="{{orders}}">
+					<view class="goods">
+						<view class="title">莫凡商城</view>
+						<view class="line"></view>
+						<view class="good" bindtap="toPay" id="{{item.id}}">
+							<view class="pic">
+								<image src="{{item.listPic}}"></image>
+							</view>
+							<view class="goodInfo">
+								<view class="name">{{item.goodsName}}</view>
+								<view class="price">
+									<text class="count">共{{item.num}}件商品</text>
+									￥{{item.payAmount}}
+								</view>
+							</view>
+						</view>
+						<view class="line"></view>
+						<view class="btn">
+							<text bindtap="toPay" id="{{item.id}}">去支付</text>
+							<text bindtap="deleteOrder" id="{{item.id}}" data-status="1">删除订
+								单</text>
+						</view>
+						<view class="line10"></view>
+						<view class="hr"></view>
+					</view>
+				</block>
+				<block wx:if="{{orders.length==0}}">
+					<view class="gyg">
+						<view>
+							<image src="/pages/images/icon/default.png"></image>
+						</view>
+						<view class="gygbtn" bindtap="toList"> 逛一逛</view>
+					</view>
+				</block>
+			</swiper-item>
+			<swiper-item>
+				<block wx:for="{{orders}}">
+					<view class="goods">
+						<view class="title">莫凡商城</view>
+						<view class="line"></view>
+						<view class="good" bindtap="toBuy" id="{{item.goodsId}}">
+							<view class="pic">
+								<image src="{{item.listPic}}"></image>
+							</view>
+							<view class="goodInfo">
+								<view class="name">{{item.goodsName}}</view>
+								<view class="price">
+									<text class="count">共{{item.num}}件商品</text>
+									￥{{item.payAmount}}
+								</view>
+							</view>
+						</view>
+						<view class="line"></view>
+						<view class="btn">
+							<text bindtap="toBuy" id="{{item.goodsId}}">再次购买</text>
+							<text bindtap="deleteOrder" id="{{item.id}}" data-status="3">删除
+								订单</text>
+						</view>
+						<view class="line10"></view>
+						<view class="hr"></view>
+					</view>
+				</block>
+				<block wx:if="{{orders.length==0}}">
+					<view class="gyg">
+						<view>
+							<image src="/pages/images/icon/default.png"></image>
+						</view>
+						<view class="gygbtn" bindtap="toList">
+							逛一逛
+						</view>
+					</view>
+				</block>
+			</swiper-item>
+			<swiper-item>
+				<block wx:for="{{orders}}">
+					<view class="goods">
+						<view class="title">莫凡商城</view>
+						<view class="line"></view>
+						<view class="good" bindtap="toBuy" id="{{item.goodsId}}">
+							<view class="pic">
+								<image src="{{item.listPic}}"></image>
+							</view>
+							<view class="goodInfo">
+								<view class="name">{{item.goodsName}}</view>
+								<view class="price">
+									<text class="count">共{{item.num}}件商品</text>
+									￥{{item.payAmount}}
+								</view>
+							</view>
+						</view>
+						<view class="line"></view>
+						<view class="btn">
+							<text bindtap="toBuy" id="{{item.goodsId}}">再次购买</text>
+							<text bindtap="deleteOrder" id="{{item.id}}" data-status="4">删除订
+								单</text>
+						</view>
+						<view class="line10"></view>
+						<view class="hr"></view>
+					</view>
+				</block>
+				<block wx:if="{{orders.length==0}}">
+					<view class="gyg">
+						<view>
+							<image src="/pages/images/icon/default.png"></image>
+						</view>
+						<view class="gygbtn" bindtap="toList">
+							逛一逛
+						</view>
+					</view>
+				</block>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>

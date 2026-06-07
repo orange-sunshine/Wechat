@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="sidebar">
+    <block wx:for="{{categories}}" wx:key="id">
+      <view class="cate-item {{currentIndex == index ? 'active' : ''}}" data-index="{{index}}" bindtap="switchCategory">
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="main">
+    <block wx:if="{{goodsList.length > 0}}">
+      <view class="grid">
+        <block wx:for="{{goodsList}}" wx:for-item="goods" wx:key="id">
+          <view class="goods-item" id="{{goods.id}}" bindtap="seeDetail">
+            <image src="{{goods.listPic}}" mode="scaleToFill"></image>
+            <view class="goods-name">{{goods.goodsName}}</view>
+            <view class="goods-price">¥ {{goods.goodsPrice}}</view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="empty">暂无商品</view>
+    </block>
+  </view>
+</view>

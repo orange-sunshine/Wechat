@@ -1,0 +1,59 @@
+.content {
+	background-color: #F9F9F8;
+	height: 700px;
+	font-family: "Microsoft YaHei";
+}
+
+.hr {
+	height: 20px;
+}
+
+.bg {
+	background-color: #ffffff;
+	padding: 10px;
+}
+
+.item {
+	display: flex;
+	flex-direction: row;
+	height: 60px;
+	line-height: 60px;
+	align-items: center;
+}
+
+.name {
+	width: 20%;
+	margin-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.value {
+	width: 80%;
+	line-height: 60px;
+	margin-left: 10px;
+	font-size: 16px;
+}
+
+.holder {
+	color: #AEAEAE;
+	font-size: 16px;
+}
+
+.line {
+	border: 1px solid #cccccc;
+	opacity: 0.2;
+}
+
+.btn {
+	margin-top: 20px;
+	background-color: #009966;
+	color: #ffffff;
+}
+
+.tip {
+	margin-top: 10px;
+	font-size: 12px;
+	color: #D53E37;
+	text-align: center;
+}

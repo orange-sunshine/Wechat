@@ -1,0 +1,11 @@
+<view>
+	<view class="result_picbox">
+		<image class="image" src="../images/icon/payyes.jpg"></image>
+</view>
+<view class="result_con">
+	<text class="h5">支付成功</text>
+	</view>
+	<view class="botm-btn">
+		<view class="order_btn"><button class="foobtnrend" bindtap="orderDetail" hover-class="button-hover">查看详情</button></view>
+			</view>
+			</view>

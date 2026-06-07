@@ -1,0 +1,160 @@
+.content {
+  font-family: "Microsoft YaHei";
+  min-height: 100vh;
+  background-color: #F9F9F8;
+  padding-bottom: 70px;
+}
+
+.hr {
+  height: 12px;
+}
+
+.line {
+  border: 1px solid #cccccc;
+  opacity: 0.2;
+}
+
+.price {
+  font-size: 15px;
+  color: #ff0000;
+  text-align: left;
+}
+
+.items {
+  background-color: #ffffff;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.icon.checked {
+  background-color: #009966;
+  border-color: #009966;
+  position: relative;
+}
+
+.icon.checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.order {
+  width: 100%;
+  height: 87px;
+  margin-left: 5px;
+}
+
+.title {
+  font-size: 15px;
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.minus,
+.add {
+  border: 1px solid #cccccc;
+  width: 25px;
+  height: 20px;
+  line-height: 17px;
+  color: #009966;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.count {
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  font-size: 13px;
+}
+
+.all {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.selectWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80px;
+}
+
+.allText {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.total {
+  flex: 1;
+  font-size: 18px;
+  color: #ff0000;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.opr {
+  width: 130px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #009966;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+}
+
+.bottom {
+  background-color: #ffffff;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.empty-cart image {
+  margin-bottom: 15px;
+}
